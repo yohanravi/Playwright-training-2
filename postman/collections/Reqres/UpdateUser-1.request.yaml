@@ -1,0 +1,14 @@
+$kind: http-request
+name: UpdateUser
+url: https://reqres.in/api/users/749
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Max\",\r
+
+    \  \"job\": \"Ron Sachuchany\"\r
+
+    }"
+order: 1000

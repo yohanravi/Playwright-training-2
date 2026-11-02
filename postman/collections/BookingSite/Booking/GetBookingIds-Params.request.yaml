@@ -1,0 +1,12 @@
+$kind: http-request
+name: GetBookingIds/Params
+url: "{{baseURL}}/booking?firstname=Bob&lastname=Smith"
+method: GET
+queryParams:
+  firstname: Bob
+  lastname: Smith
+scripts:
+  - type: afterResponse
+    code: ""
+    language: text/javascript
+order: 2000

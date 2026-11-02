@@ -1,0 +1,26 @@
+$kind: collection
+variables:
+  - key: BookingID
+    value: ""
+    disabled: false
+  - key: firstname
+    value: ""
+    disabled: false
+  - key: lastname
+    value: ""
+    disabled: false
+  - key: checkin
+    value: ""
+    disabled: false
+  - key: checkout
+    value: ""
+    disabled: false
+  - key: additionalneeds
+    value: ""
+    disabled: false
+  - key: basic_auth_083a
+    secret: true
+    disabled: false
+  - key: BookingID2
+    value: ""
+    disabled: false

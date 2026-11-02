@@ -1,0 +1,53 @@
+$kind: http-request
+name: GetBookingIds/Visualization
+url: "{{baseURL}}/booking"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "//data visualization part\r
+
+      \r
+
+      var template = `\r
+
+      <div> Total Bookings <span> {{response.length}}<span></div>\r
+
+      <table border=\"1\">\r
+
+      \    <tr bgcolor=\"#00bfff\">\r
+
+      \        <th>Booking No</th>\r
+
+      \        <th>Booking ID</th>\r
+
+      \    </tr>\r
+
+      \r
+
+      \    {{#each response}}\r
+
+      \    <tr bgcolor=\"#00bf39ff\">\r
+
+      \        <td>{{@index}}</td>\r
+
+      \        <td>{{bookingid}}</td>\r
+
+      \    </tr>\r
+
+      \    {{/each}}\r
+
+      \r
+
+      </table>\r
+
+      `;\r
+
+      \r
+
+      pm.visualizer.set(template, {\r
+
+      \    response: pm.response.json()\r
+
+      });"
+    language: text/javascript
+order: 1000

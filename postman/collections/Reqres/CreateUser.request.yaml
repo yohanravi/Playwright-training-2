@@ -1,0 +1,13 @@
+$kind: http-request
+url: https://reqres.in/api/users
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Rawan\",\r
+
+    \  \"job\": \"Ron\"\r
+
+    }"
+order: 4000

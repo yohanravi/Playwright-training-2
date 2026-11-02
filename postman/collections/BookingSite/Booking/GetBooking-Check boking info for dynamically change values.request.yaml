@@ -1,0 +1,33 @@
+$kind: http-request
+name: GetBooking/Check boking info for dynamically change values
+url: "{{baseURL}}/booking/{{BookingID}}}"
+method: GET
+scripts:
+  - type: afterResponse
+    code: "//careat variable for dynamically change frist and last names\r
+
+      \r
+
+      var firstname = pm.collectionVariables.get(\"firstname\");\r
+
+      var lastname = pm.collectionVariables.get(\"lastname\");\r
+
+      \r
+
+      pm.test(\"Check the \"+firstname+\" booking details are correct\",
+      function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \r
+
+      \    pm.expect(jsonData.firstname).to.eql(firstname);\r
+
+      \    pm.expect(jsonData.lastname).to.eql(lastname);\r
+
+      });\r\n"
+    language: text/javascript
+  - type: beforeRequest
+    code: ""
+    language: text/javascript
+order: 6000

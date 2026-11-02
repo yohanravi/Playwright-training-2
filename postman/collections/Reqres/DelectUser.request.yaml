@@ -1,0 +1,7 @@
+$kind: http-request
+url: https://reqres.in/api/users/749
+method: DELETE
+body:
+  type: json
+  content: ""
+order: 1973

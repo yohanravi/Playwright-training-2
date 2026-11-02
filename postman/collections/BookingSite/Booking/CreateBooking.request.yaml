@@ -1,0 +1,54 @@
+$kind: http-request
+description: "Generated from cURL: curl -X POST \\\r
+
+  \  https://restful-booker.herokuapp.com/booking \\\r
+
+  \  -H 'Content-Type: text/xml' \\\r
+
+  \  -d '<booking>\r
+
+  \    <firstname>Jim</firstname>\r
+
+  \    <lastname>Brown</lastname>\r
+
+  \    <totalprice>111</totalprice>\r
+
+  \    <depositpaid>true</depositpaid>\r
+
+  \    <bookingdates>\r
+
+  \      <checkin>2018-01-01</checkin>\r
+
+  \      <checkout>2019-01-01</checkout>\r
+
+  \    </bookingdates>\r
+
+  \    <additionalneeds>Breakfast</additionalneeds>\r
+
+  \  </booking>'"
+url: "{{baseURL}}/booking"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstname\" : \"Tom\",\r
+
+    \    \"lastname\" : \"Shane\",\r
+
+    \    \"totalprice\" : 111,\r
+
+    \    \"depositpaid\" : true,\r
+
+    \    \"bookingdates\" : {\r
+
+    \        \"checkin\" : \"2026-01-01\",\r
+
+    \        \"checkout\" : \"2026-01-01\"\r
+
+    \    },\r
+
+    \    \"additionalneeds\" : \"Lunch\"\r
+
+    }"
+order: 7000

@@ -1,0 +1,22 @@
+$kind: http-request
+name: GetBookingIds
+url: "{{baseURL}}/booking"
+method: GET
+queryParams:
+  - key: firstname
+    value: Bob
+    disabled: true
+    description: ""
+  - key: lastname
+    value: Smith
+    disabled: true
+    description: ""
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Check the response\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r\n"
+    language: text/javascript
+order: 3000

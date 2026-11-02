@@ -1,0 +1,6 @@
+$kind: http-request
+name: https://petmart.lk
+description: ""
+url: https://petmart.lk
+method: GET
+order: 1000

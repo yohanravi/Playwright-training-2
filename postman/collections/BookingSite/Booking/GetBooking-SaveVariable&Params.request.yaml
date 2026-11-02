@@ -1,0 +1,33 @@
+$kind: http-request
+name: GetBooking/SaveVariable&Params
+url: "{{baseURL}}/booking?firstname={{firstname}}&lastname={{lastname}}"
+method: GET
+queryParams:
+  firstname: "{{firstname}}"
+  lastname: "{{lastname}}"
+scripts:
+  - type: afterResponse
+    code: "var jsonData = pm.response.json();\r
+
+      var bid;\r
+
+      \r
+
+      if(jsonData.lenght>0);\r
+
+      {\r
+
+      \     bid=jsonData[0].bookingid;\r
+
+      }\r
+
+      // save a above ID as collection variable\r
+
+      pm.collectionVariables.set(\"BookingID\", bid);"
+    language: text/javascript
+  - type: beforeRequest
+    code: "pm.collectionVariables.set(\"firstname\", \"Josh\");\r
+
+      pm.collectionVariables.set(\"lastname\", \"Allen\");\r\n"
+    language: text/javascript
+order: 5000

@@ -1,0 +1,25 @@
+workspace:
+  id: 78b469c9-5a57-4b8c-86b7-5f9c2d8dfecb
+cloudResources:
+  globals:
+    ../postman/globals/workspace.globals.yaml: ad7b86aa-411c-4f56-896d-bfe7977b70f2
+  collections:
+    ../postman/collections/BookingSite: 58919214-64fac6f5-1494-49a2-b865-f093c046d890
+    ../postman/collections/Pet Store: 58919214-f8578a91-a869-4664-baca-2f31c01a5c04
+    ../postman/collections/Reqres: 58919214-f4304025-10ae-4954-afca-c54a651cde5e
+  environments:
+    ../postman/environments/bookingQA.environment.yaml: 58919214-92ad3c26-44bd-4b63-9bcb-00e171e9cb01
+  specs:
+    ../postman/specs/export/export.json: 553e056e-0108-429b-a228-ebd8f8272a2a
+    ../postman/specs/test/test.json: 57290fce-3bf2-4ac2-adbc-3918dbac39a9
+    ../postman/specs/API/API.json: cfb81ce3-db76-47bf-a49c-eb6b85847b52
+localResources:
+  specs:
+    - ../postman/specs/export/export.json
+    - ../postman/specs/test/test.json
+    - ../postman/specs/API/API.json
+resourceNameMappings:
+  specs:
+    - ../postman/specs/test/test.json: test
+    - ../postman/specs/export/export.json: export
+    - ../postman/specs/API/API.json: API

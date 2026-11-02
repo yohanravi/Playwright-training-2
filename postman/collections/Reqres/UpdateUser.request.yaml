@@ -1,0 +1,13 @@
+$kind: http-request
+url: https://reqres.in/api/users/749
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"RawanV\",\r
+
+    \  \"job\": \"Ron Sachuchany\"\r
+
+    }"
+order: 3000

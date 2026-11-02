@@ -1,0 +1,90 @@
+$kind: http-request
+name: UpdateBooking
+description: "Generated from cURL: curl -X POST \\\r
+
+  \  https://restful-booker.herokuapp.com/booking \\\r
+
+  \  -H 'Content-Type: text/xml' \\\r
+
+  \  -d '<booking>\r
+
+  \    <firstname>Jim</firstname>\r
+
+  \    <lastname>Brown</lastname>\r
+
+  \    <totalprice>111</totalprice>\r
+
+  \    <depositpaid>true</depositpaid>\r
+
+  \    <bookingdates>\r
+
+  \      <checkin>2018-01-01</checkin>\r
+
+  \      <checkout>2019-01-01</checkout>\r
+
+  \    </bookingdates>\r
+
+  \    <additionalneeds>Breakfast</additionalneeds>\r
+
+  \  </booking>'"
+url: "{{baseURL}}/booking/{{BookingID}}"
+method: PATCH
+headers:
+  Authorization: "{{basic_auth_083a}}"
+body:
+  type: json
+  content: "{\r
+
+    \    \"firstname\" : \"Yohan\",\r
+
+    \    \"lastname\" : \"Blake\"\r
+
+    }"
+scripts:
+  - type: beforeRequest
+    code: "const checkin = new Date();\r
+
+      \r
+
+      var year =checkin.getFullYear();\r
+
+      var month =checkin.getMonth();\r
+
+      var day =checkin.getDate();\r
+
+      \r
+
+      const checkout= new Date(year,month,day+3);;\r
+
+      \r
+
+      var formatCheckin=checkin.toISOString();\r
+
+      var formatCheckout=checkout.toISOString();\r
+
+      \r
+
+      formatCheckin=formatCheckin.split(\"T\");\r
+
+      formatCheckout=formatCheckout.split(\"T\");\r
+
+      \r
+
+      \r
+
+      pm.collectionVariables.set(\"checkin\", formatCheckin[0]);\r
+
+      pm.collectionVariables.set(\"checkout\", formatCheckout[0]);\r
+
+      \r
+
+      \r
+
+      var additionalneeds = [\"Breakfast\",\"Lunch\",\"Dinner\"];\r
+
+      var randomIndex=_.random(0,2);\r
+
+      pm.collectionVariables.set(\"additionalneeds\",
+      additionalneeds[randomIndex]);\r\n"
+    language: text/javascript
+order: 11000

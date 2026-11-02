@@ -1,0 +1,28 @@
+$kind: http-request
+description: "Generated from cURL: curl -X POST \\\r
+
+  \  https://restful-booker.herokuapp.com/auth \\\r
+
+  \  -H 'Content-Type: application/json' \\\r
+
+  \  -d '{\r
+
+  \    \"username\" : \"admin\",\r
+
+  \    \"password\" : \"password123\"\r
+
+  }'"
+url: "{{baseURL}}/auth"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"username\" : \"admin\",\r
+
+    \    \"password\" : \"password123\"\r
+
+    }"
+order: 2000

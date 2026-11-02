@@ -1,0 +1,8 @@
+name: bookingQA
+values:
+  - key: username
+    value: ''
+  - key: password
+    value: ''
+  - key: baseURL
+    value: ''
