@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('Admin ');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('admin123');
+  await page.getByRole('textbox', { name: 'Password' }).press('Enter');
+  await page.getByRole('link', { name: 'PIM' }).click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().click();
+  await page.getByRole('textbox', { name: 'Type for hints...' }).first().fill('Marco');
+  await page.getByRole('button', { name: 'Search' }).click();
+  await page.getByRole('button').filter({ hasText: /^$/ }).nth(3).click();
+  await page.locator('div:nth-child(2) > div > .oxd-input-group > div:nth-child(2) > .oxd-input').click();
+  await page.locator('div:nth-child(2) > div > .oxd-input-group > div:nth-child(2) > .oxd-input').fill('L123456');
+  await page.locator('.oxd-icon.bi-calendar').first().click();
+  await page.getByText('18').click();
+  await page.getByText('-- Select --').first().click();
+  await page.getByText('-- Select --').first().click();
+  await page.locator('div:nth-child(5) > div:nth-child(2) > div > .oxd-input-group > div:nth-child(2) > .oxd-date-wrapper > .oxd-date-input > .oxd-icon').click();
+  await page.getByText('2026', { exact: true }).click();
+  await page.getByText('1998').click();
+  await page.getByText('11').click();
+  await page.locator('.oxd-radio-input').first().click();
+  await page.getByRole('radio', { name: 'Male', exact: true }).check();
+  await page.locator('form').filter({ hasText: 'Employee Full NameEmployee' }).getByRole('button').click();
+  await page.getByText('-- Select --').click();
+  await page.locator('form').filter({ hasText: 'Blood TypeA+Test_Field Save' }).getByRole('button').click();
+});
